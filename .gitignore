@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+downloads/
+models/
+.DS_Store
+install_log.txt

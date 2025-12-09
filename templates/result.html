@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary | {{ title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="back-link">← Summarize Another</a>
+            <h1>Summary Result</h1>
+        </header>
+
+        <div class="result-card">
+            <h2>{{ title }}</h2>
+
+            <div class="summary-section">
+                <h3>Refined Summary</h3>
+                <div class="summary-content">
+                    {{ summary }}
+                </div>
+            </div>
+
+            <div class="transcript-section">
+                <h3>Transcript Preview</h3>
+                <p class="transcript-content">{{ transcript }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

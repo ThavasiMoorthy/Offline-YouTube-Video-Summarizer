@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+yt-dlp
+faster-whisper
+transformers
+torch
+ffmpeg-python
+ctranslate2 
+tokenizers
+sentencepiece
+requests
+imageio-ffmpeg
+youtube-transcript-api

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline YouTube Summarizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>YouSummarize Offline</h1>
+            <p>Private, local AI summarization for YouTube videos.</p>
+        </header>
+
+        <div class="input-section">
+            {% if error %}
+            <div class="error-banner">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form action="/summarize" method="post" onsubmit="showLoader()">
+                <div class="form-group">
+                    <label for="url">YouTube Video URL</label>
+                    <input type="text" id="url" name="url" placeholder="https://www.youtube.com/watch?v=..." required>
+                </div>
+                <button type="submit" class="btn-primary">Generate Summary</button>
+            </form>
+        </div>
+
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Downloading, Transcribing, and Summarizing...</p>
+            <p class="subtext">This process runs entirely on your CPU. Please be patient.</p>
+        </div>
+
+        <footer>
+            <p>Powered by Faster-Whisper (Tiny) & Llama 3.2 (1B)</p>
+        </footer>
+    </div>
+
+    <script>
+        function showLoader() {
+            document.querySelector('.input-section').style.display = 'none';
+            document.getElementById('loader').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>
